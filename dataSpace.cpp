@@ -33,3 +33,5 @@ string DataSpace::predict(int k, const FlowerPoint flower, Distance distance) co
     } else {
         return "versicolor";
     }
+    return nullptr;
+}
