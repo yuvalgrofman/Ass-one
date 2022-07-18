@@ -8,6 +8,6 @@ DataSpace::~DataSpace() {
     delete[] data;
 }
 
-bool DataSpace::predict(const FlowerPoint) const {
+bool DataSpace::predict(const FlowerPoint, Distance distance) const {
     //TODO
 }
