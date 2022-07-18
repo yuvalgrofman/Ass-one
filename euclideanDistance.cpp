@@ -1,18 +1,11 @@
-#include <distance.h>
+#include "distance.h"
 
-class euclideanDistance : private Distance
+class EuclideanDistance : public Distance
 {
-private:
-    /* data */
 public:
-    euclideanDistance(/* args */);
-    ~euclideanDistance();
+    double getDistance(const FlowerPoint p1, const FlowerPoint p2) const;
 };
 
-euclideanDistance::euclideanDistance(/* args */)
-{
-}
-
-euclideanDistance::~euclideanDistance()
-{
+double EuclideanDistance::getDistance(const FlowerPoint p1, const FlowerPoint p2) const {
+    return getDistance(p1, p2);
 }

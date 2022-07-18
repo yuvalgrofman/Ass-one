@@ -5,7 +5,7 @@
 
 class Distance {
     public:
-        double getDistance(const FlowerPoint& p1, const FlowerPoint& p2) const;
+        virtual double getDistance(const FlowerPoint p1, const FlowerPoint p2) const;
 };
 
 #endif //ASS_ONE_DISTANCE
