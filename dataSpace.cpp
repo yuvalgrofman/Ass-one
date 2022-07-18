@@ -29,7 +29,7 @@ string DataSpace::predict(int k, const FlowerPoint flower, Distance distance) co
     if (setosa >= virginica && setosa >= versicolor) {
         return "setosa";
     } else if (virginica >= setosa && virginica >= versicolor) {
-        return "virgrinica";
+        return "virginica";
     } else {
         return "versicolor";
     }
