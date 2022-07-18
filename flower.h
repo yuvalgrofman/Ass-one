@@ -11,7 +11,7 @@ class Flower {
         const string type;
 
     public:
-        Flower(FlowerPoint dataPoint, string type);
+        Flower(const FlowerPoint dataPoint, const string type);
         string getType() const;
         FlowerPoint getData() const;
 };
