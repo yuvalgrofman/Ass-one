@@ -1,3 +1,6 @@
+#ifndef ASS_ONE_FLOWER_POINT_H
+#define ASS_ONE_FLOWER_POINT_H
+
 class FlowerPoint {
     private:
         const double width;
@@ -12,3 +15,5 @@ class FlowerPoint {
         double getSepalWidth();
         double getPetalLength();
 };
+
+#endif //ASS_ONE_FLOWER_POINT_H
