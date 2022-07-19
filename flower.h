@@ -7,13 +7,17 @@ using namespace std;
 
 class Flower {
     private:
-        const FlowerPoint dataPoint;
-        const string type;
+        FlowerPoint dataPoint;
+        string type;
 
     public:
-        Flower(const FlowerPoint dataPoint, const string type);
+        Flower();
+        Flower(Flower const &flower);
+        Flower(FlowerPoint dataPoint, string type);
         string getType() const;
         FlowerPoint getData() const;
+        void setType(string type);
+        void setData(FlowerPoint dataPoint);
 };
 
 #endif //ASS_ONE_FLOWER_H
