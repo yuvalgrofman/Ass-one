@@ -1,6 +1,7 @@
 #include "distance.h"
 #include <cmath>
 
+//TODO: move to code to h file and inherit Distance
 class ManhattanDistance
 {
 public:

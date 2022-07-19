@@ -1,5 +1,6 @@
 #include "distance.h"
 
+//TODO: move to code to h file
 class EuclideanDistance : public Distance
 {
 public:

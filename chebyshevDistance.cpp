@@ -4,6 +4,7 @@
 
 using namespace std;
 
+//TODO: move to code to h file
 class ChebyshevDistance : public Distance
 {
 public:
