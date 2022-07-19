@@ -1,14 +1,8 @@
-#include "distance.h"
+#include "chebyshevDistance.h"
 #include <cmath>
 #include <string>
 
 using namespace std;
-
-class ChebyshevDistance : public Distance
-{
-public:
-    double getDistance(const FlowerPoint p1, const FlowerPoint p2) const;
-};
 
 double ChebyshevDistance::getDistance(const FlowerPoint p1, const FlowerPoint p2) const {
    return max(abs(p1.getPetalLength() - p2.getPetalLength()),
