@@ -1,47 +1,26 @@
 #include "dataSpaceCreator.h"
+#include <vector>
 
-DataSpaceCreator::DataSpaceCreator(const Flower *flower, DataSpaceCreator *next) {
-    this->flower = flower;
-    this->next = next;
+DataSpace DataSpaceCreator::makeDataSpace() const{
+    Flower data[length()];
+    for (int i = 0; i < length(); i++) {
+        data[i] = flowers.at(i);
+    }
+    return DataSpace(data, length());
 }
 
-int DataSpaceCreator::length() const {
-    if (flower == nullptr) {
-        return 0;
-    }
-    if (next == nullptr) {
-        return 1;
-    }
-    return 1 + next->length();
+int DataSpaceCreator::length() const{
+    return flowers.size();
 }
 
-DataSpace DataSpaceCreator::makeDataSpace() const {
-    const int count = length();
-    Flower data[count];
-    DataSpaceCreator *ptr = next;
-    data[0] = *flower;
-    for (int i = 1; i < count; i++) {
-        ptr = ptr->next;
-        data[i] = *(ptr->flower);
-    }
-    return DataSpace(data, count);
-}
-
-void DataSpaceCreator::add(const Flower *flower) {
-    if (this->flower == nullptr) {
-        this->flower = new Flower(*flower);
-    } else {
-        DataSpaceCreator *node = new DataSpaceCreator(flower, next);
-        next = node;
-    }
+void DataSpaceCreator::add(const Flower* flower) {
+    flowers.push_back(*flower);
 }
 
 DataSpaceCreator::DataSpaceCreator(FlowerReader& reader) {
-    flower = nullptr;
-    next = nullptr;
-    Flower *flowerFromRead = reader.readFlower();
-    while (flowerFromRead != nullptr) {
-        add(flowerFromRead);
-        flowerFromRead = reader.readFlower();
+    Flower* ptr =  reader.readFlower();
+    while (ptr != nullptr) {
+        add(ptr);
+        ptr = reader.readFlower();
     }
 }
