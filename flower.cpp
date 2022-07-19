@@ -19,11 +19,3 @@ string Flower::getType() const {
 FlowerPoint Flower::getData() const {
     return dataPoint;
 }
-
-void Flower::setType(const string type) {
-    this->type = type;
-}
-
-void Flower::setData(const FlowerPoint dataPoint) {
-    this->dataPoint = dataPoint;
-}

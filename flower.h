@@ -16,8 +16,6 @@ class Flower {
         Flower(FlowerPoint dataPoint, string type);
         string getType() const;
         FlowerPoint getData() const;
-        void setType(string type);
-        void setData(FlowerPoint dataPoint);
 };
 
 #endif //ASS_ONE_FLOWER_H

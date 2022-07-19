@@ -3,18 +3,18 @@
 
 #include "flower.h"
 #include "dataSpace.h"
+#include "flowerReader.h"
 
 class DataSpaceCreator {
 private:
-    const Flower dataPoint;
+    const Flower *flower;
     DataSpaceCreator *next;
-
-    void add(const Flower dataPoint) const;
-    const int length() const;
+    DataSpaceCreator(const Flower *flower, DataSpaceCreator *next);
+    void add(const Flower* flower);
+    int length() const;
 
 public:
-    DataSpaceCreator(const Flower dataPoint);
-    void init(); //change method later
+    DataSpaceCreator(FlowerReader& reader);
     DataSpace makeDataSpace() const;
 };
 

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-DataSpace::DataSpace(const Flower *data, const int numFlowers): numFlowers(numFlowers) {
+DataSpace::DataSpace(const Flower data[], const int numFlowers): numFlowers(numFlowers) {
     this->data = data;
 }
 
@@ -30,5 +30,6 @@ string DataSpace::predict(int k, const FlowerPoint flower, Distance distance) co
         return "setosa";
     } else if (virginica >= setosa && virginica >= versicolor) {
         return "virginica";
+    }
     return "versicolor";
 }
