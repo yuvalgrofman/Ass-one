@@ -1,4 +1,4 @@
-#include "distance.h"
+#include "manhattanDistance.h"
 #include <cmath>
 
 
