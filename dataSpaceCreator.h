@@ -14,7 +14,6 @@ private:
 public:
     DataSpaceCreator(FlowerReader& reader);
     DataSpace makeDataSpace() const;
-    ~DataSpaceCreator();
 };
 
 #endif // ASS_ONE_DATA_SPACE_CREATOR_H
