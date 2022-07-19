@@ -2,18 +2,20 @@
 #define ASS_ONE_DATA_SPACE_CREATOR_H
 
 #include "flower.h"
+#include "dataSpace.h"
 
 class DataSpaceCreator {
 private:
     const Flower dataPoint;
-    const DataSpaceCreator *next;
+    DataSpaceCreator *next;
 
     void add(const Flower dataPoint) const;
+    const int length() const;
 
 public:
-    DataSpaceCreator();
+    DataSpaceCreator(const Flower dataPoint);
     void init(); //change method later
-    void makeDataSpace() const;
+    DataSpace makeDataSpace() const;
 };
 
 
