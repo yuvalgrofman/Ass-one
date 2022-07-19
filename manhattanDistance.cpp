@@ -1,12 +1,6 @@
 #include "distance.h"
 #include <cmath>
 
-//TODO: move to code to h file and inherit Distance
-class ManhattanDistance
-{
-public:
-    double getDistance(const FlowerPoint p1, const FlowerPoint p2) const;
-};
 
 double ManhattanDistance::getDistance(const FlowerPoint p1, const FlowerPoint p2) const {
     return abs(p1.getPetalLength() - p2.getPetalLength()) +
