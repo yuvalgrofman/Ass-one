@@ -7,16 +7,14 @@
 
 class DataSpaceCreator {
 private:
-    const Flower *flower;
-    DataSpaceCreator *next;
-    DataSpaceCreator(const Flower *flower, DataSpaceCreator *next);
+    vector<Flower> flowers;
     void add(const Flower* flower);
     int length() const;
 
 public:
     DataSpaceCreator(FlowerReader& reader);
     DataSpace makeDataSpace() const;
+    ~DataSpaceCreator();
 };
-
 
 #endif // ASS_ONE_DATA_SPACE_CREATOR_H
