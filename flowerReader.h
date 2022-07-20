@@ -2,10 +2,15 @@
 #define ASS_ONE_FLOWER_READER_H
 
 #include "flower.h"
+#include <fstream>
 
 class FlowerReader {
+    private:
+        string file;
+        fstream fin;
+
     public:
-        FlowerReader(const File file); //something like this
+        FlowerReader(const string filename); 
         Flower* readFlower();
 };
 
