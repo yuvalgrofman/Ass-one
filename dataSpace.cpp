@@ -1,6 +1,5 @@
 #include "dataSpace.h"
 #include <vector>
-#include "nearestNeighborsSearch.h"
 
 using namespace std;
 
@@ -28,7 +27,6 @@ void DataSpace::sortByDist(const FlowerPoint flower, Distance& distance) const {
 }
 
 FlowerType DataSpace::predict(int k, const FlowerPoint flower, Distance distance) const {
-    NearestNeighborsSearch nns;
     sortByDist(flower, distance);
 
     int closestNeighboursCount[NUM_FLOWER_TYPES];
