@@ -5,31 +5,48 @@
 using namespace std;
 
 DataSpace::DataSpace(const Flower data[], const int numFlowers): numFlowers(numFlowers) {
-    this->data = data;
+    this->data = new const Flower*[numFlowers];
+    for (int i = 0; i < numFlowers; i++) {
+        this->data[i] = &data[i];
+    }
 }
 
 DataSpace::~DataSpace() {
     delete[] data;
 }
 
-string DataSpace::predict(int k, const FlowerPoint flower, Distance distance) const {
+void DataSpace::sortByDist(const FlowerPoint flower, Distance& distance) const {
+    for (int i = 0; i < numFlowers; i++) {
+        for (int j = i + 1; j < numFlowers; j++) {
+            if (distance.getDistance(flower, data[j]->getData()) > distance.getDistance(flower, data[j + 1]->getData())) {
+                const Flower *temp = data[j + 1];
+                data[j + 1] = data[j];
+                data[j] = temp;
+            }
+        }
+    }
+}
+
+FlowerType DataSpace::predict(int k, const FlowerPoint flower, Distance distance) const {
     NearestNeighborsSearch nns;
-    vector<Flower> flowers = nns.getNearestNeighbors(k, flower, *this, distance);
+    sortByDist(flower, distance);
 
-    int setosa = 0, virginica = 0, versicolor = 0;
-    for (int i = 0; i < flowers.size(); i++) {
-        if (flowers.at(i).getType() == "setosa")
-            setosa++;
-        else if (flowers.at(i).getType() == "virginica")
-            virginica++;
-        else
-            versicolor++;
+    int closestNeighboursCount[numFlowers];
+    for (int i = 0; i < numFlowers; i++) {
+        closestNeighboursCount[i] = 0;
     }
 
-    if (setosa >= virginica && setosa >= versicolor) {
-        return "setosa";
-    } else if (virginica >= setosa && virginica >= versicolor) {
-        return "virginica";
+    for (int i = 0; i < k; i++) {
+        closestNeighboursCount[data[i]->getType()]++;
     }
-    return "versicolor";
+
+    int max = -1;
+    FlowerType maxType;
+    for (int i = 0; i < NUM_FLOWER_TYPES; i++) {
+        if (closestNeighboursCount[i] > max) {
+            max = closestNeighboursCount[i];
+            maxType = static_cast<FlowerType>(i);
+        }
+    }
+    return maxType;
 }

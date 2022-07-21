@@ -3,18 +3,19 @@
 
 #include <string>
 #include "flowerPoint.h"
+#include "flowerType.h"
+
 using namespace std;
 
 class Flower {
     private:
-        FlowerPoint dataPoint;
-        string type;
+        const FlowerPoint dataPoint;
+        const FlowerType type;
 
     public:
-        Flower();
         Flower(Flower const &flower);
-        Flower(FlowerPoint dataPoint, string type);
-        string getType() const;
+        Flower(FlowerPoint dataPoint, FlowerType type);
+        FlowerType getType() const;
         FlowerPoint getData() const;
 };
 

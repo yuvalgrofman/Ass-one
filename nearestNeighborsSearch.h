@@ -8,8 +8,8 @@ using namespace std;
 
 class NearestNeighborsSearch {
 public:
-    const vector<Flower> getNearestNeighbors(const int k, const FlowerPoint flower,
-     const DataSpace& ds, Distance distance) const;
+    const vector<Flower>& getNearestNeighbors(const int k, const FlowerPoint &flower,
+     const DataSpace &ds, Distance &distance) const;
 };
 
 #endif //ASS_ONE_NNS 

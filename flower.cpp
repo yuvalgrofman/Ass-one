@@ -1,18 +1,10 @@
 #include "flower.h"
 
-Flower::Flower(const FlowerPoint dataPoint, const string type): dataPoint(dataPoint), type(type) {}
+Flower::Flower(const FlowerPoint dataPoint, const FlowerType type): dataPoint(dataPoint), type(type) {}
 
-Flower::Flower() {
-    dataPoint = FlowerPoint();
-    type = nullptr;
-}
+Flower::Flower(Flower const &flower): dataPoint(flower.dataPoint), type(flower.type) {}
 
-Flower::Flower(Flower const &flower) {
-    dataPoint = FlowerPoint(flower.getData());
-    type = flower.getType();
-}
-
-string Flower::getType() const {
+FlowerType Flower::getType() const {
     return type;
 }
 
