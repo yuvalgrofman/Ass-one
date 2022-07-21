@@ -31,8 +31,8 @@ FlowerType DataSpace::predict(int k, const FlowerPoint flower, Distance distance
     NearestNeighborsSearch nns;
     sortByDist(flower, distance);
 
-    int closestNeighboursCount[numFlowers];
-    for (int i = 0; i < numFlowers; i++) {
+    int closestNeighboursCount[NUM_FLOWER_TYPES];
+    for (int i = 0; i < NUM_FLOWER_TYPES; i++) {
         closestNeighboursCount[i] = 0;
     }
 

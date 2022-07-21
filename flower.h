@@ -17,6 +17,7 @@ class Flower {
         Flower(FlowerPoint dataPoint, FlowerType type);
         FlowerType getType() const;
         FlowerPoint getData() const;
+        Flower() = default;
 };
 
 #endif //ASS_ONE_FLOWER_H
