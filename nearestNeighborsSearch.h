@@ -6,8 +6,7 @@
 #include <vector>
 using namespace std;
 
-class NearestNeighborsSearch
-{
+class NearestNeighborsSearch {
 public:
     const vector<Flower> getNearestNeighbors(const int k, const FlowerPoint flower,
      const DataSpace& ds, Distance distance) const;

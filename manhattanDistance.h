@@ -3,8 +3,7 @@
 
 #include "distance.h"
 
-class ManhattanDistance : public Distance
-{
+class ManhattanDistance : public Distance {
 public:
     double getDistance(const FlowerPoint p1, const FlowerPoint p2) const;
 };

@@ -3,8 +3,7 @@
 
 #include "distance.h"
 
-class EuclideanDistance : public Distance
-{
+class EuclideanDistance : public Distance {
 public:
     double getDistance(const FlowerPoint p1, const FlowerPoint p2) const;
 };

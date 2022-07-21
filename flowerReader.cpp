@@ -6,7 +6,7 @@
 
 using namespace std;
 
-FlowerReader::FlowerReader(const string filename) : file(filename){
+FlowerReader::FlowerReader(const string &filename) : file(filename) {
     fin.open(file, ios::in);
 }
 

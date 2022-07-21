@@ -10,7 +10,7 @@ class FlowerReader {
         fstream fin;
 
     public:
-        FlowerReader(const string filename); 
+        FlowerReader(const string &filename);
         Flower* readFlower();
 };
 
