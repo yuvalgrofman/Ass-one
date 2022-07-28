@@ -3,7 +3,7 @@
 
 using namespace std;
 
-DataSpace::DataSpace(const Flower* data[], const int numFlowers): numFlowers(numFlowers) {
+DataSpace::DataSpace(const Flower** data, const int numFlowers): numFlowers(numFlowers) {
     this->data = data;
 }
 
