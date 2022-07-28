@@ -7,7 +7,7 @@
 class DataSpace {
     private:
         const int numFlowers;
-        // TODO: I don't like this so much, lets discuss
+
         const Flower **data;
         void sortByDist(const FlowerPoint flower, Distance& distance) const;
 
