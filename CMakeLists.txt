@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 project(Ass_one)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 11)
 
 include_directories(.)
 
@@ -24,4 +24,5 @@ add_executable(Ass_one
         flowerReader.h
         flowerType.h
         manhattanDistance.cpp
-        manhattanDistance.h)
+        manhattanDistance.h
+        main.cpp)

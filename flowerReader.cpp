@@ -30,10 +30,21 @@ Flower* FlowerReader::readFlower() {
     int petalLength = stoi(word);
 
     getline(streamLine, word, ',');
-    string type = word;
+    string typeName = word;
+
+    FlowerType type;
+
+    if (word.compare("SETOSA") == 0) {
+        type = SETOSA;
+    } else if (word.compare("VIRGINICA")) {
+        type = VIRGINICA;
+    } else {
+        type = VERSICOLOR;
+    }
+
 
     FlowerPoint fp = *(new FlowerPoint(width, sepalLength, sepalWidth, petalLength));
-    auto flower = new unique_ptr<Flower>(new Flower(fp, type));
+    Flower* flower = new Flower(fp, type);
 
     return flower;
 }
