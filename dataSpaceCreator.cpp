@@ -1,9 +1,9 @@
 #include "dataSpaceCreator.h"
 
 DataSpace& DataSpaceCreator::makeDataSpace() const {
-    Flower data[length()];
+    const Flower* data[length()];
     for (int i = 0; i < length(); i++) {
-        data[i] = flowers.at(i);
+        data[i] = new Flower(flowers.at(i));
     }
     DataSpace* dataSpace = new DataSpace(data, length());
     return *dataSpace;

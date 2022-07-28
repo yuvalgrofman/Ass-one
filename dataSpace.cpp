@@ -3,11 +3,8 @@
 
 using namespace std;
 
-DataSpace::DataSpace(const Flower data[], const int numFlowers): numFlowers(numFlowers) {
-    this->data = new const Flower*[numFlowers];
-    for (int i = 0; i < numFlowers; i++) {
-        this->data[i] = &data[i];
-    }
+DataSpace::DataSpace(const Flower* data[], const int numFlowers): numFlowers(numFlowers) {
+    this->data = data;
 }
 
 DataSpace::~DataSpace() {

@@ -1,13 +1,14 @@
 #include "flowerReader.h"
-#include <fstream>
 #include <string>
 #include <sstream>
 #include <memory>
+#include <iostream>
 
 using namespace std;
 
 FlowerReader::FlowerReader(const string &filename) : file(filename) {
     fin.open(file, ios::in);
+    cout<< fin.is_open()<<endl;
 }
 
 Flower* FlowerReader::readFlower() {
@@ -18,16 +19,16 @@ Flower* FlowerReader::readFlower() {
     stringstream streamLine(line);
 
     getline(streamLine, word, ',');
-    int width = stoi(word);
+    double width = stod(word);
 
     getline(streamLine, word, ',');
-    int sepalLength = stoi(word);
+    double sepalLength = stod(word);
 
     getline(streamLine, word, ',');
-    int sepalWidth = stoi(word);
+    double sepalWidth = stod(word);
 
     getline(streamLine, word, ',');
-    int petalLength = stoi(word);
+    double petalLength = stod(word);
 
     getline(streamLine, word, ',');
     string typeName = word;
@@ -47,4 +48,25 @@ Flower* FlowerReader::readFlower() {
     Flower* flower = new Flower(fp, type);
 
     return flower;
+}
+
+FlowerPoint* FlowerReader::readFlowerPoint() {
+    string line, word;
+    getline(fin, line);
+
+    stringstream streamLine(line);
+
+    getline(streamLine, word, ',');
+    double width = stod(word);
+
+    getline(streamLine, word, ',');
+    double sepalLength = stod(word);
+
+    getline(streamLine, word, ',');
+    double sepalWidth = stod(word);
+
+    getline(streamLine, word, ',');
+    double petalLength = stod(word);
+
+    return new FlowerPoint(width, sepalLength, sepalWidth, petalLength);
 }

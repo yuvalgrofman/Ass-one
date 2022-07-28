@@ -12,6 +12,7 @@ class FlowerReader {
     public:
         FlowerReader(const string &filename);
         Flower* readFlower();
+        FlowerPoint* readFlowerPoint();
 };
 
 #endif //ASS_ONE_FLOWER_READER_H
