@@ -8,13 +8,15 @@ using namespace std;
 
 FlowerReader::FlowerReader(const string &filename) : file(filename) {
     fin.open(file, ios::in);
-    cout<< fin.is_open()<<endl;
 }
 
 Flower* FlowerReader::readFlower() {
 
     string line, word;
     getline(fin, line);
+
+    if (line == "")
+        return nullptr;
 
     stringstream streamLine(line);
 
@@ -35,9 +37,9 @@ Flower* FlowerReader::readFlower() {
 
     FlowerType type;
 
-    if (word.compare("SETOSA") == 0) {
+    if (word.compare("Iris-setosa") == 0) {
         type = SETOSA;
-    } else if (word.compare("VIRGINICA") == 0) {
+    } else if (word.compare("Iris-virginica") == 0) {
         type = VIRGINICA;
     } else {
         type = VERSICOLOR;
