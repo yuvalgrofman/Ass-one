@@ -13,7 +13,7 @@ DataSpace::~DataSpace() {
 
 void DataSpace::sortByDist(const FlowerPoint flower, Distance& distance) const {
     for (int i = 0; i < numFlowers; i++) {
-        for (int j = i + 1; j < numFlowers; j++) {
+        for (int j = i + 1; j < numFlowers - 1; j++) {
             if (distance.getDistance(flower, data[j]->getData()) > distance.getDistance(flower, data[j + 1]->getData())) {
                 const Flower *temp = data[j + 1];
                 data[j + 1] = data[j];
