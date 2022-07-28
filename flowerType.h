@@ -7,5 +7,5 @@ enum FlowerType {
     VERSICOLOR = 2
 };
 const int NUM_FLOWER_TYPES = 3;
-
+std::ostream& operator<<(std::ostream& os, const FlowerType Token);
 #endif //ASS_ONE_FLOWER_TYPE_H

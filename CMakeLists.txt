@@ -23,6 +23,7 @@ add_executable(Ass_one
         flowerReader.cpp
         flowerReader.h
         flowerType.h
+        flowerType.cpp
         manhattanDistance.cpp
         manhattanDistance.h
         main.cpp)
