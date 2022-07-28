@@ -36,7 +36,7 @@ Flower* FlowerReader::readFlower() {
 
     if (word.compare("SETOSA") == 0) {
         type = SETOSA;
-    } else if (word.compare("VIRGINICA")) {
+    } else if (word.compare("VIRGINICA") == 0) {
         type = VIRGINICA;
     } else {
         type = VERSICOLOR;
