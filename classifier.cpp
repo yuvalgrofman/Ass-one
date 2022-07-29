@@ -18,12 +18,12 @@ distances(distances) {
 }
 
 void Classifier::classify() {
-    for (Distance distance : *distances) {
+    for (Distance &distance : *distances) {
         predictFileByDist(distance.getName() + "_output.csv", distance);
     }
 }
 
-void Classifier::predictFileByDist(string outputFile, Distance distance) {
+void Classifier::predictFileByDist(string outputFile, Distance& distance) {
     ofstream outfile;
     outfile.open(outputFile, ios::out);
 

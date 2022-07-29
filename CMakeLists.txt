@@ -12,7 +12,6 @@ add_executable(Ass_one
         dataSpace.h
         dataSpaceCreator.cpp
         dataSpaceCreator.h
-        distance.cpp
         distance.h
         euclideanDistance.cpp
         euclideanDistance.h
@@ -26,4 +25,7 @@ add_executable(Ass_one
         flowerType.cpp
         manhattanDistance.cpp
         manhattanDistance.h
-        main.cpp classifier.cpp classifier.h)
+        main.cpp
+        classifier.cpp
+        classifier.h
+        )

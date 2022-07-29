@@ -13,7 +13,7 @@ class DataSpace {
 
     public:
         DataSpace(const Flower** data, const int numFlowers);
-        FlowerType predict(int k, const FlowerPoint, Distance distance) const;
+        FlowerType predict(int k, const FlowerPoint, Distance& distance) const;
         ~DataSpace();
 };
 

@@ -23,7 +23,7 @@ void DataSpace::sortByDist(const FlowerPoint flower, Distance& distance) const {
     }
 }
 
-FlowerType DataSpace::predict(int k, const FlowerPoint flower, Distance distance) const {
+FlowerType DataSpace::predict(int k, const FlowerPoint flower, Distance& distance) const {
     sortByDist(flower, distance);
 
     int closestNeighboursCount[NUM_FLOWER_TYPES];
