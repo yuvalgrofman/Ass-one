@@ -11,9 +11,9 @@ DataSpace::~DataSpace() {
     delete[] data;
 }
 
-void DataSpace::sortByDist(const FlowerPoint flower, Distance& distance) const {
+void DataSpace::sortByDist(const FlowerPoint& flower, Distance& distance) const {
     for (int i = 0; i < numFlowers; i++) {
-        for (int j = i + 1; j < numFlowers - 1; j++) {
+        for (int j = 0; j < numFlowers - 1 - i; j++) {
             if (distance.getDistance(flower, data[j]->getData()) > distance.getDistance(flower, data[j + 1]->getData())) {
                 const Flower *temp = data[j + 1];
                 data[j + 1] = data[j];
@@ -23,7 +23,7 @@ void DataSpace::sortByDist(const FlowerPoint flower, Distance& distance) const {
     }
 }
 
-FlowerType DataSpace::predict(int k, const FlowerPoint flower, Distance& distance) const {
+FlowerType DataSpace::predict(int k, const FlowerPoint& flower, Distance& distance) const {
     sortByDist(flower, distance);
 
     int closestNeighboursCount[NUM_FLOWER_TYPES];

@@ -9,11 +9,11 @@ class DataSpace {
         const int numFlowers;
 
         const Flower **data;
-        void sortByDist(const FlowerPoint flower, Distance& distance) const;
+        void sortByDist(const FlowerPoint& flower, Distance& distance) const;
 
     public:
         DataSpace(const Flower** data, const int numFlowers);
-        FlowerType predict(int k, const FlowerPoint, Distance& distance) const;
+        FlowerType predict(int k, const FlowerPoint& flowerPoint, Distance& distance) const;
         ~DataSpace();
 };
 
