@@ -56,6 +56,9 @@ FlowerPoint* FlowerReader::readFlowerPoint() {
     string line, word;
     getline(fin, line);
 
+    if (line == "")
+        return nullptr;
+
     stringstream streamLine(line);
 
     getline(streamLine, word, ',');

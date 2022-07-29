@@ -26,4 +26,4 @@ add_executable(Ass_one
         flowerType.cpp
         manhattanDistance.cpp
         manhattanDistance.h
-        main.cpp)
+        main.cpp classifier.cpp classifier.h)
