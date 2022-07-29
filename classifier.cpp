@@ -1,7 +1,7 @@
 #include "classifier.h"
 
 
-Classifier::Classifier(int k, vector<Distance>* distances, string classifiedData, string unclassifiedData) : k(k),
+Classifier::Classifier(int k, vector<Distance*>* distances, string classifiedData, string unclassifiedData) : k(k),
 distances(distances) {
 
     FlowerReader &unClassifiedReader = *(new FlowerReader(unclassifiedData));
@@ -18,8 +18,8 @@ distances(distances) {
 }
 
 void Classifier::classify() {
-    for (Distance &distance : *distances) {
-        predictFileByDist(distance.getName() + "_output.csv", distance);
+    for (Distance *distance : *distances) {
+        predictFileByDist(distance->getName() + "_output.csv", *distance);
     }
 }
 

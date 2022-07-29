@@ -12,14 +12,14 @@ using namespace std;
 class Classifier {
     private:
         int k;
-        vector<Distance>* distances;
+        vector<Distance*>* distances;
         DataSpace* dataSpace;
         vector<FlowerPoint>* unclassifiedFLowers = new vector<FlowerPoint>();
 
         void predictFileByDist(string outputFile, Distance& distance);
 
     public:
-        Classifier(int k, vector<Distance>* distances, string classifiedData, string unclassifiedData);
+        Classifier(int k, vector<Distance*>* distances, string classifiedData, string unclassifiedData);
         void classify();
 };
 

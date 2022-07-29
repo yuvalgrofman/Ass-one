@@ -4,7 +4,7 @@
 #include "chebyshevDistance.h"
 
 int main(int argc, char* argv[]) {
-    vector<Distance> distances = {*(new EuclideanDistance())};
+    vector<Distance*> distances = {(new EuclideanDistance())};
     Classifier* classifier = new Classifier(3, &distances, "/home/jonathan/CLionProjects/Ass-one/classified.csv",
                 "/home/jonathan/CLionProjects/Ass-one/Unclassified.csv");
 
