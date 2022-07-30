@@ -1,7 +1,6 @@
 #include "flowerReader.h"
 #include <string>
 #include <sstream>
-#include <memory>
 #include <iostream>
 
 using namespace std;
