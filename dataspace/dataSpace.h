@@ -1,8 +1,8 @@
 #ifndef ASS_ONE_DATA_SPACE_H
 #define ASS_ONE_DATA_SPACE_H
 
-#include "flower.h"
-#include "distance.h"
+#include "flower/flower.h"
+#include "distances/distance.h"
 
 class DataSpace {
     private:

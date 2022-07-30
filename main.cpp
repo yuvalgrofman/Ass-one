@@ -1,12 +1,12 @@
 #include "classifier.h"
-#include "euclideanDistance.h"
-#include "manhattanDistance.h"
-#include "chebyshevDistance.h"
+#include "distances/euclideanDistance.h"
+#include "distances/manhattanDistance.h"
+#include "distances/chebyshevDistance.h"
 
 int main(int argc, char* argv[]) {
-    vector<Distance*> distances = {(new EuclideanDistance())};
-    Classifier* classifier = new Classifier(3, &distances, "/home/jonathan/CLionProjects/Ass-one/classified.csv",
-                "/home/jonathan/CLionProjects/Ass-one/Unclassified.csv");
+    vector<Distance*> distances = {(new EuclideanDistance()), (new ManhattanDistance()), (new ChebyshevDistance())};
+    Classifier* classifier = new Classifier(3, &distances, "C:\\Users\\yuval\\CLionProjects\\Ass-one\\classified.csv",
+                "C:\\Users\\yuval\\CLionProjects\\Ass-one\\Unclassified.csv");
 
     classifier->classify();
 //    FlowerReader &classifiedReader = *(new FlowerReader("/home/jonathan/CLionProjects/Ass-one/classified.csv"));

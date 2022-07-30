@@ -1,15 +1,15 @@
 #include <iostream>
-#include "flowerType.h"
+#include "distances/flowerType.h"
 std::ostream& operator<<(std::ostream& os, const FlowerType Token) {
     switch(Token){
         case FlowerType::SETOSA:
-            os << "SETOSA";
+            os << "Iris-setosa";
             break;
         case FlowerType::VIRGINICA:
-            os << "VIRGINICA";
+            os << "Iris-viriginica";
             break;
         case FlowerType::VERSICOLOR:
-            os << "VERSICOLOR";
+            os << "Iris-versicolor";
             break;
         default:
             os << "UNKNOWN";

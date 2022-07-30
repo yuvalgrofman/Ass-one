@@ -1,7 +1,7 @@
 #ifndef ASS_ONE_DISTANCE
 #define ASS_ONE_DISTANCE
 
-#include "flowerPoint.h"
+#include "flower/flowerPoint.h"
 #include "string"
 
 using namespace std;

@@ -1,7 +1,7 @@
 #ifndef ASS_ONE_MANHATTAN_DISTANCE
 #define ASS_ONE_MANHATTAN_DISTANCE
 
-#include "distance.h"
+#include "distances/distance.h"
 
 class ManhattanDistance : public Distance {
 public:

@@ -1,7 +1,7 @@
 #ifndef ASS_ONE_FLOWER_READER_H
 #define ASS_ONE_FLOWER_READER_H
 
-#include "flower.h"
+#include "flower/flower.h"
 #include <fstream>
 
 class FlowerReader {

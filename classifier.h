@@ -2,9 +2,9 @@
 #define ASS_ONE_CLASSIFIER_H
 
 #include <string>
-#include "distance.h"
+#include "distances/distance.h"
 #include "vector"
-#include "dataSpaceCreator.h"
+#include "dataspace/dataSpaceCreator.h"
 #include <iostream>
 
 using namespace std;

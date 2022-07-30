@@ -3,7 +3,7 @@
 
 #include <string>
 #include "flowerPoint.h"
-#include "flowerType.h"
+#include "distances/flowerType.h"
 
 using namespace std;
 

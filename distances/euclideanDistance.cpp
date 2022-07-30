@@ -1,4 +1,4 @@
-#include "euclideanDistance.h"
+#include "distances/euclideanDistance.h"
 
 double EuclideanDistance::getDistance(const FlowerPoint& p1, const FlowerPoint& p2) const {
     return sqrt(std::pow(p1.getPetalLength() - p2.getPetalLength(), 2) +
