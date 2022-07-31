@@ -2,7 +2,7 @@
 #define ASS_ONE_DATA_SPACE_CREATOR_H
 
 #include "flower/flower.h"
-#include "dataspace/dataSpace.h"
+#include "dataSpace.h"
 #include "flower/flowerReader.h"
 #include <vector>
 

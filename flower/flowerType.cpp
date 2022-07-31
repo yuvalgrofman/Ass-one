@@ -1,4 +1,3 @@
-#include <iostream>
 #include "flowerType.h"
 std::ostream& operator<<(std::ostream& os, const FlowerType Token) {
     switch(Token){

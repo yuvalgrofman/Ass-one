@@ -29,4 +29,6 @@ add_executable(Ass_one
         main.cpp
         classifier.cpp
         classifier.h
+        flower/flowerSorter.h
+        flower/flowerSorter.cpp
         )

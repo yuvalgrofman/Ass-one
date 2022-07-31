@@ -1,5 +1,6 @@
 #include "dataSpace.h"
 #include <vector>
+#include "flower/flowerSorter.h"
 
 using namespace std;
 
@@ -12,15 +13,8 @@ DataSpace::~DataSpace() {
 }
 
 void DataSpace::sortByDist(const FlowerPoint& flower, Distance& distance) const {
-    for (int i = 0; i < numFlowers; i++) {
-        for (int j = 0; j < numFlowers - 1 - i; j++) {
-            if (distance.getDistance(flower, data[j]->getData()) > distance.getDistance(flower, data[j + 1]->getData())) {
-                const Flower *temp = data[j + 1];
-                data[j + 1] = data[j];
-                data[j] = temp;
-            }
-        }
-    }
+    FlowerSorter sorter(flower, distance);
+    sorter.sortFlowerList(data, numFlowers);
 }
 
 FlowerType DataSpace::predict(int k, const FlowerPoint& flower, Distance& distance) const {
