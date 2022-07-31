@@ -5,7 +5,7 @@ std::ostream& operator<<(std::ostream& os, const FlowerType Token) {
             os << "Iris-setosa";
             break;
         case FlowerType::VIRGINICA:
-            os << "Iris-viriginica";
+            os << "Iris-virginica";
             break;
         case FlowerType::VERSICOLOR:
             os << "Iris-versicolor";
