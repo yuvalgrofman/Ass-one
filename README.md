@@ -70,9 +70,9 @@ By default, both files will already be placed in the project directory, but the 
 ## Output
 
 The output of the program would be 3 csv files, one for each of the results of the KNN algorithm, based on the following ways to distance metrics:
- 1. [Euclidean distance] (https://en.wikipedia.org/wiki/Euclidean_distance)
- 2. [Manhattan distance] (https://en.wikipedia.org/wiki/Taxicab_geometry)
- 3. [Chebyshev distance] (https://en.wikipedia.org/wiki/Chebyshev_distance)
+ 1. [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance)
+ 2. [Manhattan distance](https://en.wikipedia.org/wiki/Taxicab_geometry)
+ 3. [Chebyshev distance](https://en.wikipedia.org/wiki/Chebyshev_distance)
 
 Each file is named according to the distance metric used.
 For example, the file named "euclidean_distance.csv" contains the results of the KNN algorithm using the Euclidean distance metric.
@@ -87,5 +87,6 @@ Finally, it retrieves the k closest neighbours, finds their most common classifi
 
 ## Authors
 
-[Yuval Grofman] (https://github.com/yuvalgrofman)
-[Jonathan Moiseyev] (https://github.com/OldRimStalker)
+[Yuval Grofman](https://github.com/yuvalgrofman)
+
+[Jonathan Moiseyev](https://github.com/OldRimStalker)
