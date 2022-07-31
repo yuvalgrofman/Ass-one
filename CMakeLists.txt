@@ -1,3 +1,4 @@
+
 cmake_minimum_required(VERSION 3.22)
 project(Ass_one)
 
@@ -21,7 +22,7 @@ add_executable(Ass_one
         flower/flowerPoint.h
         flower/flowerReader.cpp
         flower/flowerReader.h
-        distances/flowerType.h
+        flower/flowerType.h
         flower/flowerType.cpp
         distances/manhattanDistance.cpp
         distances/manhattanDistance.h

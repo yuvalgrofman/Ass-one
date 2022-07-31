@@ -1,6 +1,9 @@
 #ifndef ASS_ONE_FLOWER_TYPE_H
 #define ASS_ONE_FLOWER_TYPE_H
 
+#include <ostream>
+
+
 enum FlowerType {
     SETOSA = 0,
     VIRGINICA = 1,
