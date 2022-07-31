@@ -1,33 +1,91 @@
-***ABOUT THE PROJECT:***
+# Flower Classifier
 
-this project is for predicting flower classifications from the following flower attributes:
-width, sepal length, sepal width, petal length.
+## About The Project
 
-    
-***HOW TO RUN:***
-
-to use this project, you need to have a csv file named classified.csv, which will have the above flower attributes in it, and the classification of the flower separated by commas.
-the csv file should be in the same directory as this project.
-there should be another csv file, named Unclassified.csv, which will have the flower attributes in it, but without the classification, so it will be used as the data to predict with the knn algorithm.
-
-to run this project, you would need to give a number argument to the program, which will be the number of neighbors to use in the knn algorithm, this number must be lower than the total number of flowers in the program.
-an example of running the program would be: a.out 5, which would run the algorithm with 5 neighbors. if you won't specify the number of neighbors, the program would run with 3 neighbors.
-you can also give the path to a folder that contains the classified and Unclassified csv files (then you also have to give the number of neighbours as the first argument before the path), and note that if you give the path to a folder, you can't give a direct path to the csv files.
-or you can give to arguments(then you also have to give the number of neighbours as the first argument before these 2 arguments), the first would be the path of the classified csv file, the second would be the path of the Unclassified csv file (note, if you choose this option your path would need to include the name of the csv files).
-
-make sure that if you give path to one file, you also give the path to the other file, and if you give the path to a folder, it will contain both csv files.
-also no matter which path you give, if you give some kind of path you'll have to give the number of kneighbours as the first argument.
-
-you can also not give a path, if the csv files are in the same directory as the program.
+Our project predicts flower classifications using the KNN algorithm with different distance metrics.
+The attributes with which we defined a flower were: width, sepal length, sepal width, petal length. 
+In addition, each flower has a type. The types are:
+ - Iris-setosa
+ - Iris-versicolor
+ - Iris-virginica
 
 
-***THE OUTPUT:***
+## Getting Started
 
-the output of the program would be 3 csv files, one for each of the results of the knn algorithm, based on the following ways to measure distance: euclidian distance, manhattan distance, and chebyshev distance.
-each output file would be named based on the name of the distance measure used, for example, if the distance measure used was euclidian distance, the file would be named euclidian_output.csv.
+### 1) Prerequisites
+
+This project requires CMake in order to function properly. 
+To install CMake, follow the instructions here:
+> https://cmake.org/install/
+
+### 2) Install And Run Project
+
+Firstly, clone the project from the GitHub repository:
+> git clone 'https://github.com/yuvalgrofman/Ass-one'
+
+Then, to run the project execute the following commands (in the terminal):
+
+        mkdir -p build && cd build
+        cmake ..
+        make -j && make Ass-one <arg1> <arg2> <arg3>
+
+Note that all three arguments are optional. 
+The first argument is the k value used for the KNN algorithm.
+The second and third arguments are the file paths to the classified.csv and Unclassified.csv files. 
+
+If the k value is not specified, the default value of k is 3.
+If the classified.csv and Unclassified.csv file paths are not specified, the default values are:
+ - classified.csv: classified.csv
+ - Unclassified.csv: Unclassified.csv
+
+Please note that if the k value is not given the file paths must also not be given.
+
+### 3) Set .csv Files
 
 
-***THE ALGORITHM:***
+This project relies on two .csv files to properly function.
+1. classified.csv - contains the data of classified flowers used for the KNN algorithm.
 
-the algorithm works, by reading the classified.csv file, and creating a database of the flowers in the file. then to predict every unpredicted flower with one of the distance functions, and a number of neighbours, it sorts the database using ***(change this to name of sort used)***, based on the distance to the flower we want to predict. then it takes the top n neighbours and takes the most common classification of them, and predicts the flower as the most common classification.
+This file contains the following columns (separated by a comma):
 
+ - width - the width of the flower
+ - sepal length - the length of the flower's sepal
+ - sepal width - the width of the flower's sepal
+ - petal length - the length of the flower's petal
+ - type - the type of the flower
+
+2. Unclassified.csv - contains the data of unclassified flowers.
+
+This file contains the following columns (separated by a comma):
+
+ - width - the width of the flower
+ - sepal length - the length of the flower's sepal
+ - sepal width - the width of the flower's sepal
+ - petal length - the length of the flower's petal
+
+Both files should be placed in the same directory as the project.
+By default, both files will already be placed in the project directory, but the user can change these files.
+
+
+## Output
+
+The output of the program would be 3 csv files, one for each of the results of the KNN algorithm, based on the following ways to distance metrics:
+ 1. [Euclidean distance] (https://en.wikipedia.org/wiki/Euclidean_distance)
+ 2. [Manhattan distance] (https://en.wikipedia.org/wiki/Taxicab_geometry)
+ 3. [Chebyshev distance] (https://en.wikipedia.org/wiki/Chebyshev_distance)
+
+Each file is named according to the distance metric used.
+For example, the file named "euclidean_distance.csv" contains the results of the KNN algorithm using the Euclidean distance metric.
+
+
+## Algorithm
+
+The algorithm works, by reading the classified.csv file thus creating a database of flowers.
+Then it predicts every unpredicted flower using one of the distance functions, and a specified number of neighbours.
+Subsequently, it sorts the database using ***(change this to name of sort used)***, from closest to farthest (by distance).
+Finally, it retrieves the k closest neighbours, finds their most common classification and returns aforementioned classification as the "predicted type".
+
+## Authors
+
+[Yuval Grofman] (https://github.com/yuvalgrofman)
+[Jonathan Moiseyev] (https://github.com/OldRimStalker)
