@@ -6,6 +6,11 @@
 #include "flower/flowerReader.h"
 #include <vector>
 
+/**
+ * @brief The DataSpaceCreator class
+ *
+ * This class is responsible for creating a data space.
+ */
 class DataSpaceCreator {
 private:
     vector<Flower> flowers;

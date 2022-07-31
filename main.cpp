@@ -8,17 +8,17 @@ int main(int argc, char* argv[]) {
     Classifier* classifier = nullptr;
     if (argc == 1) {
         classifier = new Classifier(3, &distances,
-                                    "../classified.csv","../Unclassified.csv");
+                                    "classified.csv","Unclassified.csv");
     }
     else if (argc == 2) {
         classifier = new Classifier(stoi(argv[1]), &distances,
-                                    "../classified.csv","../Unclassified.csv");
+                                    "classified.csv","Unclassified.csv");
     } else if (argc == 3) {
         string classifiedData, unclassifiedData;
         classifiedData.append(argv[2]);
-        classifiedData.append("/classified.csv");
+        classifiedData.append("classified.csv");
         unclassifiedData.append(argv[2]);
-        unclassifiedData.append("/Unclassified.csv");
+        unclassifiedData.append("Unclassified.csv");
         classifier = new Classifier(stoi(argv[1]), &distances,
                                     classifiedData,unclassifiedData);
     } else {
