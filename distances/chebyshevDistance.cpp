@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 double ChebyshevDistance::getDistance(const FlowerPoint& p1, const FlowerPoint& p2) const {
    return max(abs(p1.getPetalLength() - p2.getPetalLength()),
           max(abs(p1.getSepalLength() - p2.getSepalLength()),

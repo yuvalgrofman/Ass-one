@@ -4,16 +4,41 @@
 #include "flower/flower.h"
 #include "distances/distance.h"
 
+/**
+ * @brief The DataSpace class
+ *
+ * This class represents a data space.
+ * It contains a array of pointers to flowers and a integer which represents the number of flowers.
+ */
 class DataSpace {
     private:
         const int numFlowers;
-
         const Flower **data;
+        /**
+         * Sorts the flowers in the data space by the distance to the given flower.
+         * @param flower given flower
+         * @param distance distance class to use
+         */
         void sortByDist(const FlowerPoint& flower, Distance& distance) const;
 
     public:
+        /**
+         * Constructor.
+         * @param numFlowers number of flowers in the data space
+         * @param data array of pointers to flowers
+         */
         DataSpace(const Flower** data, const int numFlowers);
+        /**
+         * predicts the type of the flower-point based on the k nearest neighbors.
+         * @param k integer which represents the number of neighbors to use
+         * @param flowerPoint flower point to predict
+         * @param distance distance class to use
+         * @return the type of the flower-point
+         */
         FlowerType predict(int k, const FlowerPoint& flowerPoint, Distance& distance) const;
+        /**
+         * Destructor.
+         */
         ~DataSpace();
 };
 
