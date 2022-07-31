@@ -12,7 +12,13 @@ there should be another csv file, named Unclassified.csv, which will have the fl
 
 to run this project, you would need to give a number argument to the program, which will be the number of neighbors to use in the knn algorithm, this number must be lower than the total number of flowers in the program.
 an example of running the program would be: a.out 5, which would run the algorithm with 5 neighbors. if you won't specify the number of neighbors, the program would run with 3 neighbors.
+you can also give the path to a folder that contains the classified and Unclassified csv files (then you also have to give the number of neighbours as the first argument before the path), and note that if you give the path to a folder, you can't give a direct path to the csv files.
+or you can give to arguments(then you also have to give the number of neighbours as the first argument before these 2 arguments), the first would be the path of the classified csv file, the second would be the path of the Unclassified csv file (note, if you choose this option your path would need to include the name of the csv files).
 
+make sure that if you give path to one file, you also give the path to the other file, and if you give the path to a folder, it will contain both csv files.
+also no matter which path you give, if you give some kind of path you'll have to give the number of kneighbours as the first argument.
+
+you can also not give a path, if the csv files are in the same directory as the program.
 
 
 ***THE OUTPUT:***
