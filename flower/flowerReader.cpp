@@ -7,7 +7,6 @@ using namespace std;
 
 FlowerReader::FlowerReader(const string &filename) : file(filename) {
     fin.open(file, ios::in);
-    std::cout<<fin.is_open()<<std::endl;
 }
 
 Flower* FlowerReader::readFlower() {
