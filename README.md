@@ -82,7 +82,7 @@ For example, the file named "euclidean_distance.csv" contains the results of the
 
 The algorithm works, by reading the classified.csv file thus creating a database of flowers.
 Then it predicts every unpredicted flower using one of the distance functions, and a specified number of neighbours.
-Subsequently, it sorts the database using ***(change this to name of sort used)***, from closest to farthest (by distance).
+Subsequently, it sorts the database using merge sort, from closest to farthest (by distance).
 Finally, it retrieves the k closest neighbours, finds their most common classification and returns aforementioned classification as the "predicted type".
 
 ## Authors
