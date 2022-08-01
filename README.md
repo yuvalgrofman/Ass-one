@@ -27,8 +27,8 @@ Then, to run the project execute the following commands (in the terminal):
 
         mkdir -p build && cd build
         cmake ..
-        make -j && make Ass-one
-        ./Ass-one <argument 1> <argument 2> <argument 3>
+        make -j
+        ./AssOne.out <argument 1> <argument 2> <argument 3>
 
 Note that all three arguments are optional. 
 The first argument is the k value used for the KNN algorithm.

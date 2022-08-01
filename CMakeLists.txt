@@ -1,12 +1,12 @@
 
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.16)
 project(Ass_one)
 
 set(CMAKE_CXX_STANDARD 11)
 
 include_directories(.)
 
-add_executable(Ass_one
+add_executable(AssOne.out
         distances/chebyshevDistance.cpp
         distances/chebyshevDistance.h
         dataspace/dataSpace.cpp
