@@ -14,8 +14,8 @@ In addition, each flower has a type. The types are:
 
 ### 1) Prerequisites
 
-This project requires CMake in order to function properly. 
-To install CMake, follow the instructions [here](https://cmake.org/install/).
+This project requires CMake (3.16 or above) in order to function properly. 
+To install CMake, follow the instructions [here](https://cmake.org/install/). In addition, a cpp compiler that supports c++11 is required.
 
 ### 2) Install And Run Project
 
@@ -27,8 +27,8 @@ Then, to run the project execute the following commands (in the terminal):
 
         mkdir -p build && cd build
         cmake ..
-        make -j && make Ass-one
-        ./Ass-one <argument 1> <argument 2> <argument 3>
+        make -j
+        ./AssOne.out <argument 1> <argument 2> <argument 3>
 
 Note that all three arguments are optional. 
 The first argument is the k value used for the KNN algorithm.
