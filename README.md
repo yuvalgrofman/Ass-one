@@ -14,8 +14,8 @@ In addition, each flower has a type. The types are:
 
 ### 1) Prerequisites
 
-This project requires CMake in order to function properly. 
-To install CMake, follow the instructions [here](https://cmake.org/install/).
+This project requires CMake (3.16 or above) in order to function properly. 
+To install CMake, follow the instructions [here](https://cmake.org/install/). In addition, a cpp compiler thats supports c++11 is required.
 
 ### 2) Install And Run Project
 
