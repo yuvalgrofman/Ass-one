@@ -3,6 +3,7 @@
 
 #include "distances/distance.h"
 #include <cmath>
+
 /**
  * @brief The EuclideanDistance class
  *

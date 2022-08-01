@@ -36,10 +36,15 @@ class Flower {
          * @return the type of the flower
          */
         FlowerType getType() const;
+
         /**
          * @return the data point of the flower
          */
         FlowerPoint getData() const;
+
+        /**
+         * Default constructor.
+         */
         Flower() = default;
 };
 

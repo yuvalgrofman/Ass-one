@@ -14,6 +14,7 @@ class DataSpace {
     private:
         const int numFlowers;
         const Flower **data;
+
         /**
          * Sorts the flowers in the data space by the distance to the given flower.
          * @param flower given flower
@@ -28,6 +29,7 @@ class DataSpace {
          * @param data array of pointers to flowers
          */
         DataSpace(const Flower** data, const int numFlowers);
+
         /**
          * predicts the type of the flower-point based on the k nearest neighbors.
          * @param k integer which represents the number of neighbors to use
@@ -36,6 +38,7 @@ class DataSpace {
          * @return the type of the flower-point
          */
         FlowerType predict(int k, const FlowerPoint& flowerPoint, Distance& distance) const;
+
         /**
          * Destructor.
          */

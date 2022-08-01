@@ -3,8 +3,15 @@
 #include "distances/manhattanDistance.h"
 #include "distances/chebyshevDistance.h"
 
+/**
+ * The main function for running the program.
+ * @param argc - the number of arguments the program got from the console.
+ * @param argv - the arguments the program got from the console.
+ * @return 0 (the default return value for a c++ main function).
+ */
 int main(int argc, char* argv[]) {
     vector<Distance*> distances = {(new EuclideanDistance()), (new ManhattanDistance()), (new ChebyshevDistance())};
+
     Classifier* classifier = nullptr;
     if (argc == 1) {
         classifier = new Classifier(3, &distances,
@@ -27,4 +34,5 @@ int main(int argc, char* argv[]) {
     }
 
     classifier->classify();
+    delete classifier;
 }

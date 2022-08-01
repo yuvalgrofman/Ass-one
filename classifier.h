@@ -16,10 +16,10 @@ using namespace std;
  */
 class Classifier {
     private:
-        int k;
-        vector<Distance*>* distances;
-        DataSpace* dataSpace;
-        vector<FlowerPoint>* unclassifiedFLowers = new vector<FlowerPoint>();
+        const int k;
+        const vector<Distance*>* distances;
+        const DataSpace* dataSpace;
+        vector<FlowerPoint>* unclassifiedFLowers;
 
         /**
          * Creates a file with the given name and predicts the flower type of the unclassified flowers,
@@ -27,7 +27,7 @@ class Classifier {
          * @param outputFile The name of the file to create.
          * @param distance given distance to use.
          */
-        void predictFileByDist(string outputFile, Distance& distance);
+        void predictFileByDist(const string &outputFile, Distance &distance) const;
 
     public:
         /**
@@ -37,12 +37,18 @@ class Classifier {
          * @param classifiedData path to the file containing the classified flowers
          * @param unclassifiedData path to the file containing the unclassified flowers
          */
-        Classifier(int k, vector<Distance*>* distances, string classifiedData, string unclassifiedData);
+        Classifier(int k, vector<Distance*>* distances, const string& classifiedData, const string& unclassifiedData);
+
         /**
          * Classifies the unclassified flowers.
          * For each distance class, a file is created containing the predicted flower types according to the distance class.
          */
         void classify();
+
+        /**
+         * Destructor.
+         */
+        ~Classifier();
 };
 
 
