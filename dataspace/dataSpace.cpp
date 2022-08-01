@@ -9,6 +9,9 @@ DataSpace::DataSpace(const Flower** data, const int numFlowers): numFlowers(numF
 }
 
 DataSpace::~DataSpace() {
+    for (int i = 0; i < numFlowers; i++) {
+        delete data[i];
+    }
     delete[] data;
 }
 

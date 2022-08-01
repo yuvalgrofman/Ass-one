@@ -1,20 +1,25 @@
 #include "classifier.h"
 
 
-Classifier::Classifier(int k, vector<Distance*>* distances, string classifiedData, string unclassifiedData) : k(k),
-distances(distances) {
+Classifier::Classifier(int k, vector<Distance*>* distances, const string& classifiedData,
+                       const string& unclassifiedData) : k(k), distances(distances) {
+    unclassifiedFLowers = new vector<FlowerPoint*>();
 
     FlowerReader &unClassifiedReader = *(new FlowerReader(unclassifiedData));
     FlowerPoint* ptr = unClassifiedReader.readFlowerPoint();
 
     while (ptr != nullptr) {
-        unclassifiedFLowers->push_back(*(ptr));
+        unclassifiedFLowers->push_back(ptr);
         ptr = unClassifiedReader.readFlowerPoint();
     }
+
+    delete &unClassifiedReader;
 
     FlowerReader &classifiedReader = *(new FlowerReader(classifiedData));
     DataSpaceCreator creator = DataSpaceCreator(classifiedReader);
     dataSpace = &creator.makeDataSpace();
+
+    delete &classifiedReader;
 }
 
 void Classifier::classify() {
@@ -23,13 +28,24 @@ void Classifier::classify() {
     }
 }
 
-void Classifier::predictFileByDist(string outputFile, Distance& distance) {
+void Classifier::predictFileByDist(const string &outputFile, Distance &distance) const {
     ofstream outfile;
     outfile.open(outputFile, ios::out);
 
-    for (FlowerPoint flower : *unclassifiedFLowers) {
-        outfile << dataSpace->predict(k, flower, distance) << endl;
+    for (FlowerPoint *flower : *unclassifiedFLowers) {
+        outfile << dataSpace->predict(k, *flower, distance) << endl;
     }
 
     outfile.close();
+}
+
+Classifier::~Classifier() {
+    delete dataSpace;
+    for (FlowerPoint *flowerPoint : *unclassifiedFLowers) {
+        delete flowerPoint;
+    }
+    delete unclassifiedFLowers;
+    for (Distance *dist : *distances) {
+        delete dist;
+    }
 }

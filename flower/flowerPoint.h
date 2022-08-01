@@ -32,14 +32,17 @@ class FlowerPoint {
          * @return the width of the flower (double)
          */
         double getWidth() const;
+
         /**
          * @return the sepal length of the flower (double)
          */
         double getSepalLength() const;
+
         /**
          * @return the sepal width of the flower (double)
          */
         double getSepalWidth() const;
+
         /**
          * @return the petal length of the flower (double)
          */

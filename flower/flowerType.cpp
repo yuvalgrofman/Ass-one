@@ -1,6 +1,6 @@
 #include "flowerType.h"
-std::ostream& operator<<(std::ostream& os, const FlowerType Token) {
-    switch(Token){
+std::ostream& operator<<(std::ostream& os, const FlowerType type) {
+    switch(type){
         case FlowerType::SETOSA:
             os << "Iris-setosa";
             break;

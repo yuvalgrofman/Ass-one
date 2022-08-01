@@ -1,13 +1,17 @@
 #include "flower.h"
 
-Flower::Flower(const FlowerPoint dataPoint, const FlowerType type): dataPoint(dataPoint), type(type) {}
+Flower::Flower(const FlowerPoint& dataPoint, const FlowerType type): type(type), dataPoint(dataPoint) {}
 
-Flower::Flower(Flower const &flower): dataPoint(flower.dataPoint), type(flower.type) {}
+Flower::Flower(Flower const &flower): type(flower.type), dataPoint(flower.dataPoint) {}
 
 FlowerType Flower::getType() const {
     return type;
 }
 
-FlowerPoint Flower::getData() const {
+const FlowerPoint& Flower::getData() const {
     return dataPoint;
+}
+
+Flower::~Flower() {
+    delete &dataPoint;
 }

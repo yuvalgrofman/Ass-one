@@ -13,6 +13,7 @@ class FlowerReader {
     private:
         // The file stream to read from.
         string file;
+
         //the stream used to read the file
         fstream fin;
 
@@ -22,12 +23,14 @@ class FlowerReader {
          * @param file the file to read from
          */
         FlowerReader(const string &filename);
+
         /**
          * Reads a flower from the file.
          * if the file is empty, it returns nullptr.
          * @return the flower
          */
         Flower* readFlower();
+
         /**
          * Reads a flower point from the file.
          * if the file is empty, it returns nullptr.
