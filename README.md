@@ -15,13 +15,13 @@ In addition, each flower has a type. The types are:
 ### 1) Prerequisites
 
 This project requires CMake in order to function properly. 
-To install CMake, follow the instructions here:
-> https://cmake.org/install/
+To install CMake, follow the instructions [here](https://cmake.org/install/).
 
 ### 2) Install And Run Project
 
 Firstly, clone the project from the GitHub repository:
-> git clone 'https://github.com/yuvalgrofman/Ass-one'
+
+        git clone 'https://github.com/yuvalgrofman/Ass-one'
 
 Then, to run the project execute the following commands (in the terminal):
 
