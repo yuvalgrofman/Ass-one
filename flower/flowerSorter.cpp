@@ -1,7 +1,7 @@
 #include "flowerSorter.h"
 
 bool FlowerSorter::compare(const Flower *flower1, const Flower *flower2) const {
-    return distance.getDistance(flowerPoint, flower1->getData()) <
+    return distance.getDistance(flowerPoint, flower1->getData()) <=
                         distance.getDistance(flowerPoint, flower2->getData());
 }
 
