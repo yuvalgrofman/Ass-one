@@ -15,7 +15,7 @@ using namespace std;
  */
 class Flower {
     private:
-        const FlowerPoint dataPoint;
+        const FlowerPoint& dataPoint;
         const FlowerType type;
 
     public:
@@ -30,7 +30,7 @@ class Flower {
          * @param dataPoint data point of the flower
          * @param type type of the flower
          */
-        Flower(FlowerPoint dataPoint, FlowerType type);
+        Flower(const FlowerPoint &dataPoint, FlowerType type);
 
         /**
          * @return the type of the flower
@@ -40,12 +40,17 @@ class Flower {
         /**
          * @return the data point of the flower
          */
-        FlowerPoint getData() const;
+        const FlowerPoint& getData() const;
 
         /**
          * Default constructor.
          */
         Flower() = default;
+
+        /**
+         * Destructor.
+         */
+        ~Flower();
 };
 
 #endif //ASS_ONE_FLOWER_H

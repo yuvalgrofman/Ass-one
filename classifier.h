@@ -19,7 +19,7 @@ class Classifier {
         const int k;
         const vector<Distance*>* distances;
         const DataSpace* dataSpace;
-        vector<FlowerPoint>* unclassifiedFLowers;
+        vector<FlowerPoint*>* unclassifiedFLowers;
 
         /**
          * Creates a file with the given name and predicts the flower type of the unclassified flowers,

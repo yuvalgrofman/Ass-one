@@ -45,7 +45,7 @@ Flower* FlowerReader::readFlower() {
     }
 
 
-    FlowerPoint fp = *(new FlowerPoint(width, sepalLength, sepalWidth, petalLength));
+    FlowerPoint& fp = *(new FlowerPoint(width, sepalLength, sepalWidth, petalLength));
     Flower* flower = new Flower(fp, type);
 
     return flower;

@@ -13,13 +13,13 @@
  */
 class DataSpaceCreator {
 private:
-    vector<Flower> flowers;
+    vector<const Flower*> flowers;
 
     /**
      * Adds a flower to the collection.
      * @param flower - the flower to add.
      */
-    void add(const Flower& flower);
+    void add(const Flower* flower);
 
     /**
      * Says the length of the list of flowers
