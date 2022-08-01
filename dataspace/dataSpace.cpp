@@ -15,13 +15,13 @@ DataSpace::~DataSpace() {
     delete[] data;
 }
 
-void DataSpace::sortByDist(const FlowerPoint& flower, Distance& distance) const {
-    FlowerSorter sorter(flower, distance);
-    sorter.sortFlowerList(data, numFlowers);
-}
-
 FlowerType DataSpace::predict(int k, const FlowerPoint& flower, Distance& distance) const {
-    sortByDist(flower, distance);
+    const Flower *arr[numFlowers];
+    for (int i = 0; i < numFlowers; i++) {
+        arr[i] = data[i];
+    }
+    FlowerSorter sorter(flower, distance);
+    sorter.sortFlowerList(arr, numFlowers);
 
     int closestNeighboursCount[NUM_FLOWER_TYPES];
     for (int i = 0; i < NUM_FLOWER_TYPES; i++) {
@@ -29,7 +29,7 @@ FlowerType DataSpace::predict(int k, const FlowerPoint& flower, Distance& distan
     }
 
     for (int i = 0; i < k; i++) {
-        closestNeighboursCount[data[i]->getType()]++;
+        closestNeighboursCount[arr[i]->getType()]++;
     }
 
     int max = -1;

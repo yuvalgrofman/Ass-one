@@ -15,13 +15,6 @@ class DataSpace {
         const int numFlowers;
         const Flower **data;
 
-        /**
-         * Sorts the flowers in the data space by the distance to the given flower.
-         * @param flower given flower
-         * @param distance distance class to use
-         */
-        void sortByDist(const FlowerPoint& flower, Distance& distance) const;
-
     public:
         /**
          * Constructor.
